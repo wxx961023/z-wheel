@@ -1,0 +1,23 @@
+{
+  "name": "z-wheel",
+  "version": "0.0.1",
+  "description": "<!-- [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web) -->\r ## 介绍",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wxx961023/z-wheel.git"
+  },
+  "keywords": [
+    "vue",
+    "ui"
+  ],
+  "author": "Brazen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wxx961023/z-wheel/issues"
+  },
+  "homepage": "https://github.com/wxx961023/z-wheel#readme"
+}
