@@ -1,10 +1,12 @@
 <template>
-  <button class="z-button"  :class="{[`icon-${iconPosition}`]:true}">
-    <svg class="icon" v-if="icon">
-      <use :xlink:href="`#i-${icon}`"></use>
-    </svg>
+  <button class="z-button"  
+    :class="{[`icon-${iconPosition}`]:true}" 
+    @click="loadingShow"
+  >
+    <z-icon :name="icon" v-if="icon && !loading"></z-icon>
+    <z-icon class="loading" name="loading" v-if="loading"></z-icon>
     <div class="content">
-      <slot></slot>
+      <slot/>
     </div>
   </button>
 </template>
@@ -21,7 +23,17 @@
           return value === 'left' || value === 'right'
         }
       }
-    }
+    },
+    data(){
+      return {
+        loading:false
+      }
+    },
+    methods: {
+      loadingShow(){
+        this.loading = !this.loading
+      }
+    },
   }
 </script>
 
@@ -33,6 +45,10 @@
   $border-color:#999;
   $bg-active-color:#666 ;
   
+  @keyframes spin{
+    0%{transform:rotate(0deg);}
+    100%{transform:rotate(360deg);}
+  }
   .z-button{  
     background: $background-color;
     border-radius: $border-radius;
@@ -54,5 +70,8 @@
     &:focus{ outline: none; }
     &:active{ background: $bg-active-color; }
     &:hover{ border-color:$border-color-hover; }
+    .loading{
+      animation: spin 0.75s infinite linear;
+    }
   }
 </style>
