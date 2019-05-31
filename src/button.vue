@@ -1,14 +1,12 @@
 <template>
-  <div class="button-wrapper">
-    <button class="z-button"  :class="{[`icon-${iconPosition}`]:true}">
-      <svg class="icon" v-if="icon">
-        <use :xlink:href="`#i-${icon}`"></use>
-      </svg>
-      <div class="content">
-        <slot></slot>
-      </div>
-    </button>
-  </div>
+  <button class="z-button"  :class="{[`icon-${iconPosition}`]:true}">
+    <svg class="icon" v-if="icon">
+      <use :xlink:href="`#i-${icon}`"></use>
+    </svg>
+    <div class="content">
+      <slot></slot>
+    </div>
+  </button>
 </template>
 
 <script>
@@ -56,8 +54,5 @@
     &:focus{ outline: none; }
     &:active{ background: $bg-active-color; }
     &:hover{ border-color:$border-color-hover; }
-  }
-  .button-wrapper{
-    display: inline-block;
   }
 </style>
