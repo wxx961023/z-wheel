@@ -17,7 +17,7 @@
 </style>
 <body>
 <div id="app">
-  <z-button  icon="settings" icon-position="left">按钮</z-button>
+  <z-button  icon="settings" icon-position="left" :loading="loading1" @click="loading1=!loading1">按钮</z-button>
   <z-button icon="settings" icon-position="right">按钮 </z-button>
   <z-button>按钮</z-button>
   <z-icon name="download"></z-icon>

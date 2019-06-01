@@ -1,10 +1,10 @@
 <template>
   <button class="z-button"  
     :class="{[`icon-${iconPosition}`]:true}" 
-    @click="loadingShow"
+    @click="$emit('click')"
   >
     <z-icon :name="icon" v-if="icon && !loading"></z-icon>
-    <z-icon class="loading" name="loading" v-if="loading"></z-icon>
+    <z-icon class="loading icon" name="loading" v-if="loading"></z-icon>
     <div class="content">
       <slot/>
     </div>
@@ -22,16 +22,10 @@
         validator(value){
           return value === 'left' || value === 'right'
         }
-      }
-    },
-    data(){
-      return {
-        loading:false
-      }
-    },
-    methods: {
-      loadingShow(){
-        this.loading = !this.loading
+      },
+      loading:{
+        type:Boolean,
+        default:false
       }
     },
   }
