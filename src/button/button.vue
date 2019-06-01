@@ -1,6 +1,6 @@
 <template>
   <button class="z-button"  
-    :class="{[`icon-${iconPosition}`]:true}" 
+    :class="{[`icon-${iconPosition}`]:true,circle}" 
     @click="$emit('click')"
   >
     <z-icon :name="icon" v-if="icon && !loading"></z-icon>
@@ -12,7 +12,11 @@
 </template>
 
 <script>
+  import Icon from './icon.vue';
   export default {
+    components:{
+      'z-icon':Icon
+    },
     name:'ButtonWheel',
     props:{
       icon:{},
@@ -24,6 +28,10 @@
         }
       },
       loading:{
+        type:Boolean,
+        default:false
+      },
+      circle:{
         type:Boolean,
         default:false
       }
@@ -66,6 +74,16 @@
     &:hover{ border-color:$border-color-hover; }
     .loading{
       animation: spin 0.75s infinite linear;
+    }
+    &.circle{
+      height:32px;
+      width: 32px;
+      border-radius: 50%;
+      position: relative;
+      > .icon{
+        position: absolute;
+
+      }
     }
   }
 </style>
