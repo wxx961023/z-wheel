@@ -7,6 +7,14 @@
 <script>
   export default {
     name:'ButtonGroupWheel',
+    mounted() {
+      for(let node of this.$el.children){
+        let name = node.nodeName.toLowerCase()
+        if(name !== 'button'){
+          console.warn(`子元素必须都是 'button' ,但是你写的是${name}`)
+        }
+      }
+    },
   }
 </script>
 
@@ -15,7 +23,9 @@
     display:inline-flex;
     > .z-button{
       border-radius:0;
-      margin-left:-1px;
+      &:not(:first-child){
+        margin-left:-1px;
+      }
       &:first-child{
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;

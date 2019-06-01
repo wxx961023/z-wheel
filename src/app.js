@@ -1,7 +1,7 @@
 import Vue from 'vue';
-import Button from './button.vue';
-import Icon from './icon.vue';
-import ButtonGroup from './button-group.vue';
+import Button from './button/button.vue';
+import Icon from './button/icon.vue';
+import ButtonGroup from './button/button-group.vue';
 
 Vue.component('z-button',Button)
 Vue.component('z-icon',Icon)
