@@ -13,7 +13,6 @@
   }
   .box{
     margin: 20px;
-
   }
 </style>
 <body>
@@ -23,6 +22,10 @@
     <z-input value="李四" readonly></z-input>
     <z-input value="王五"></z-input>
     <z-input search></z-input>
+  <div class="box" style="margin-left: 0px;">
+    <z-input v-model="message"></z-input>
+    <span>{{message}}</span>
+  </div>
   </div>
   <div class="box">
     <z-input value="陈" error="姓名不能少于两个字"></z-input>
