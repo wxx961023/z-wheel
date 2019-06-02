@@ -11,22 +11,34 @@
   #app{
     margin: 150px;
   }
-</style>
-<style>
-  .icon{ width: 1em; height: 1em; }
+  .box{
+    margin: 20px;
+
+  }
 </style>
 <body>
 <div id="app">
-  <z-button  icon="settings" icon-position="left" :loading="loading1" @click="loading1=!loading1">按钮</z-button>
-  <z-button icon="settings" icon-position="right">按钮 </z-button>
-  <z-button icon="settings" circle :loading="loading2" @click="loading2=!loading2"></z-button>
-  <z-button-group>
-    <z-button icon="left">上一页</z-button>
-    <z-button>更多</z-button>
-    <z-button icon="right" icon-position="right">下一页</z-button>
-  </z-button-group>
+  <div class="box">
+    <z-input value="张三" disabled></z-input>
+    <z-input value="李四" readonly></z-input>
+    <z-input value="王五"></z-input>
+    <z-input search></z-input>
+  </div>
+  <div class="box">
+    <z-input value="陈" error="姓名不能少于两个字"></z-input>
+  </div>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1199663_p6xr92d385.js"></script>
 </body>
 </html>
+
+<!-- <z-button  icon="settings" icon-position="left" :loading="loading1" @click="loading1=!loading1">按钮</z-button>
+<z-button icon="settings" icon-position="right">按钮 </z-button>
+<z-button icon="settings" circle :loading="loading2" @click="loading2=!loading2"></z-button>
+<z-button-group>
+  <z-button icon="left">上一页</z-button>
+  <z-button>更多</z-button>
+  <z-button icon="right" icon-position="right">下一页</z-button>
+</z-button-group>
+</div> -->
