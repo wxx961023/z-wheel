@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,41 +8,72 @@
   <title>Z-Wheel</title>
 </head>
 <style>
-  *{ margin: 0; padding: 0; box-sizing: border-box }
-  #app{
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+
+  #app {
     margin: 150px;
   }
-  .box{
+
+  .box {
     margin: 20px;
   }
 </style>
+
 <body>
-<div id="app">
-  <div class="box">
-    <z-input value="张三" disabled></z-input>
-    <z-input value="李四" readonly></z-input>
-    <z-input value="王五"></z-input>
-    <z-input search></z-input>
+  <div id="app">
+    <z-row>
+      <z-col>1</z-col>
+      <z-col>2</z-col>
+    </z-row>
+    <z-row>
+      <z-col>1</z-col>
+      <z-col>2</z-col>
+      <z-col>3</z-col>
+    </z-row>
+    <z-row>
+      <z-col span="2">1</z-col>
+      <z-col span="22">11</z-col>
+    </z-row>
+    <z-row>
+      <z-col span="4">1</z-col>
+      <z-col span="20">11</z-col>
+    </z-row>
   </div>
-  <div class="box">
-    <z-input v-model="message"></z-input>
-    <span>{{message}}</span>
-  </div>
-  <div class="box">
-    <z-input value="陈" error="姓名不能少于两个字"></z-input>
-  </div>
-</div>
-<script src="./src/app.js"></script>
-<script src="//at.alicdn.com/t/font_1199663_p6xr92d385.js"></script>
+  <script src="./src/app.js"></script>
+  <script src="//at.alicdn.com/t/font_1199663_p6xr92d385.js"></script>
 </body>
+
 </html>
 
+<!-- button -->
+
 <!-- <z-button  icon="settings" icon-position="left" :loading="loading1" @click="loading1=!loading1">按钮</z-button>
-<z-button icon="settings" icon-position="right">按钮 </z-button>
-<z-button icon="settings" circle :loading="loading2" @click="loading2=!loading2"></z-button>
-<z-button-group>
-  <z-button icon="left">上一页</z-button>
-  <z-button>更多</z-button>
-  <z-button icon="right" icon-position="right">下一页</z-button>
-</z-button-group>
+  <z-button icon="settings" icon-position="right">按钮 </z-button>
+  <z-button icon="settings" circle :loading="loading2" @click="loading2=!loading2"></z-button>
+  <z-button-group>
+    <z-button icon="left">上一页</z-button>
+    <z-button>更多</z-button>
+    <z-button icon="right" icon-position="right">下一页</z-button>
+  </z-button-group>
+</div> -->
+
+<!-- input -->
+
+<!-- <div class="box">
+  <z-input value="张三" disabled></z-input>
+  <z-input value="李四" readonly></z-input>
+  <z-input value="王五"></z-input>
+  <z-input search></z-input>
+</div>
+<div class="box">
+  <z-input v-model="message"></z-input>
+  <span>{{message}}</span>
+</div>
+<div class="box">
+  <z-input value="陈" error="姓名不能少于两个字"></z-input>
+</div>
 </div> -->
