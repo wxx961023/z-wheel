@@ -1,5 +1,5 @@
 <template>
-  <div class="col" :class="[`col-${span}`]">
+  <div class="col" :class="colClass" :style="colStyle" >
     <slot></slot>
   </div>
 </template>
@@ -9,6 +9,29 @@
     props:{
       span:{
         type:[Number,String]
+      },
+      offset:{
+        type:[Number,String]
+      },
+    },
+    computed:{
+      colClass(){
+        let {span,offset} = this
+        return [
+          span &&　`col-${span}`,
+          offset && `offset-${offset}`
+        ]
+      },
+      colStyle(){
+        return{
+          paddingLeft:this.gutter/2+'px',
+          paddingRight:this.gutter/2+'px'
+        }
+      }
+    },
+    data(){
+      return{
+        gutter:0
       }
     }
   }
@@ -17,15 +40,17 @@
 <style lang='scss' scoped>
   .col{
     width: 50%;
-    height: 100px;
-    background: grey;
-    border: 1px solid pink;
-    $class-prefix:col-;
+    $class-col:col-;
     @for $n from 1 through 24 {
-      &.#{$class-prefix}#{$n}{
+      &.#{$class-col}#{$n}{
         width:($n/24)*100%
       }
     }
-
+    $class-offset:offset-;
+    @for $n from 1 through 24 {
+      &.#{$class-offset}#{$n}{
+        margin-left:($n/24)*100%
+      }
+    }
   }
 </style>

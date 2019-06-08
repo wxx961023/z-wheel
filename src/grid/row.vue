@@ -1,5 +1,5 @@
 <template>
-  <div class="row">
+  <div class="row" :style="rowStyle">
     <slot></slot>
   </div>
 </template>
@@ -7,11 +7,32 @@
 <script>
   export default {
     name:'RowWheel',
+    props:{
+      gutter:{
+        type:[Number,String]
+      }
+    },
+    computed:{
+      rowStyle(){
+        let {gutter} = this
+        return {
+          marginLeft:-gutter/2+'px',
+          marginRight:-gutter/2+'px'
+        }
+      }
+    },
+    mounted(){
+      this.$children.forEach((vm)=>{
+        vm.gutter = this.gutter
+        
+      })
+    }
   }
 </script>
 
 <style lang='scss' scoped>
   .row{
     display: flex;
+    // border: 1px solid red;
   }
 </style>
