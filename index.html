@@ -21,24 +21,35 @@
   .box {
     margin: 20px;
   }
+  .demo{
+    background: #ddd;
+    border: 1px solid pink;
+    height: 100px;
+  }
 </style>
 
 <body>
   <div id="app">
-    <div style="border: 1px solid black">
-      <!-- <z-row>
-        <z-col>1</z-col>
-        <z-col>2</z-col>
-      </z-row> -->
-      <z-row gutter="20">
-        <z-col span="4">1</z-col>
-        <z-col span="20">11</z-col>
-      </z-row>
-      <!-- <z-row>
-        <z-col span="2">1</z-col>
-        <z-col span="20" offset="2">11</z-col>
-      </z-row> -->
-    </div>
+    <z-row>
+      <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </z-col>
+      <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </z-col>
+      <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </z-col>
+      <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </z-col>
+      <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </z-col>
+      <z-col span="24" :ipad="{span:12}" :narrow-pc="{span:8}">
+        <div class="demo"></div>
+      </z-col>
+    </z-row>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_1199663_p6xr92d385.js"></script>
