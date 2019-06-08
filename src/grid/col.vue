@@ -17,7 +17,7 @@
     return valid
   }
   export default {
-    name:'GuluCol',
+    name:'ColWheel',
     props:{
       span:{
         type:[Number,String]
