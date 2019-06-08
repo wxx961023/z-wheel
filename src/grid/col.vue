@@ -20,7 +20,7 @@
         return [
           span &&　`col-${span}`,
           offset && `offset-${offset}`
-        ]
+          ]
       },
       colStyle(){
         return{
@@ -39,7 +39,6 @@
 
 <style lang='scss' scoped>
   .col{
-    width: 50%;
     $class-col:col-;
     @for $n from 1 through 24 {
       &.#{$class-col}#{$n}{
