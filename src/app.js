@@ -36,7 +36,9 @@ new Vue({
     message:'hi'
   },
   created(){
-    this.$toast('我是toast我是toast我是toast')
+    this.$toast('你的智商需要充值!',{
+     
+    })
   },
   methods:{
     showToast(){
