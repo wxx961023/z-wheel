@@ -7,7 +7,7 @@ export default {
       toast.$slots.default = [message]
       toast.$mount()
       document.body.appendChild(toast.$el)
-      console.log(toast.$el)
+      
     }
   }
 }

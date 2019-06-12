@@ -40,7 +40,7 @@ new Vue({
   },
   methods:{
     showToast(){
-      this.$toast()
+      this.$toast('我是toast')
     }
   }
 })
