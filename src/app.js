@@ -48,8 +48,7 @@ new Vue({
             console.log('1')
           }
         },
-        autoClose:false,
-        autoCloseDelay:3
+        autoClose:3,
       })
     }
   }
