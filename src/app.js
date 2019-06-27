@@ -12,6 +12,12 @@ import Footer from './layout/footer.vue';
 import Sider from './layout/sider.vue';
 import Toast from './toast/toast.vue';
 import Plugin from './toast/plugin.js';
+import Tabs from './tabs/tabs.vue'
+import TabsHead from './tabs/tabs-head'
+import TabsBody from './tabs/tabs-body'
+import TabsItem from './tabs/tabs-item.vue'
+import TabsPane from './tabs/tabs-pane.vue'
+
 
 
 Vue.component('z-button',Button);
@@ -26,14 +32,17 @@ Vue.component('z-content',Content);
 Vue.component('z-footer',Footer);
 Vue.component('z-sider',Sider);
 Vue.component('z-toast',Toast);
+Vue.component('z-tabs',Tabs);
+Vue.component('z-tabs-head',TabsHead);
+Vue.component('z-tabs-body',TabsBody);
+Vue.component('z-tabs-item',TabsItem);
+Vue.component('z-tabs-pane',TabsPane);
 Vue.use(Plugin)
 
 new Vue({
   el:'#app',
   data:{
-    loading1:false,
-    loading2:false,
-    message:'hi'
+    selectedTab:'sport'
   },
   created(){
   },

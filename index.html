@@ -14,17 +14,19 @@
     box-sizing: border-box
   }
 
-  #app {
-  }
-  .sider{
+  #app {}
+
+  .sider {
     background: #999;
     width: 150px;
   }
-  .header{
+
+  .header {
     background: #666;
     height: 100px;
   }
-  .footer{
+
+  .footer {
     background: #555;
     height: 100px;
   }
@@ -32,7 +34,34 @@
 
 <body>
   <div id="app">
-    <button @click="showToast">点我</button>
+    <z-tabs :selected.sync="selectedTab">
+      <z-tabs-head>
+        <template slot="actions">
+          <button>设置</button>
+        </template>
+        <z-tabs-item name="woman">
+          <z-icon name="settings"></z-icon>
+          美女
+        </z-tabs-item>
+        <z-tabs-item name="finance">
+          财经
+        </z-tabs-item>
+        <z-tabs-item name="sports">
+          足球
+        </z-tabs-item>
+      </z-tabs-head>
+      <z-tabs-body>
+        <z-tabs-pane name="woman">
+          美女相关
+        </z-tabs-pane>
+        <z-tabs-pane name="finance">
+          财经相关
+        </z-tabs-pane>
+        <z-tabs-pane name="sports">
+          足球相关
+        </z-tabs-pane>
+      </z-tabs-body>
+    </z-tabs>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_1199663_p6xr92d385.js"></script>
