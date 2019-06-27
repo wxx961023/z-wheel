@@ -8,6 +8,7 @@
 <script>
     export default {
         name:'TabsHeadWheel',
+        inject:['eventBus'],
         data(){
             return {
 

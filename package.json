@@ -4,9 +4,9 @@
   "description": "<!-- [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://travis-ci.org/travis-ci/travis-web) -->\r ## 介绍",
   "main": "index.js",
   "scripts": {
-    "dev-test":"parcel watch test/* --no-cache & karma start",
+    "dev-test": "parcel watch test/* --no-cache & karma start",
     "test": "parcel build test/* --no-cache --no-minify && karma start --single-run",
-    "start":"npx parcel index.html"
+    "start": "npx parcel index.html"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/wxx961023/z-wheel#readme",
   "dependencies": {
+    "v": "^0.3.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {

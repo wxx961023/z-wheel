@@ -7,10 +7,17 @@
 <script>
     export default {
         name:'TabsPaneWheel',
+        inject:['eventBus'],
         data(){
             return {
 
             }
+        },
+        created(){
+            this.eventBus.$on('update:selected',(name)=>{
+                console.log(name);
+                
+            })
         }
     }
 </script>

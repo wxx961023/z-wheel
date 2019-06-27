@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click="xxx">
         <slot></slot>
     </div>
 </template>
@@ -7,9 +7,21 @@
 <script>
     export default {
         name:'TabsItemWheel',
-        data(){
-            return {
-
+        inject:['eventBus'],
+        props:{
+            name:{
+                type:String||Number,
+                required:true
+            }
+        },
+        created(){
+            this.eventBus.$on('update:selected',(name)=>{
+                console.log(name)
+            })
+        },
+        methods:{
+            xxx(){
+                this.eventBus.$emit('update:selected',this.name)
             }
         }
     }

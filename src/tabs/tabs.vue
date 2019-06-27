@@ -5,8 +5,19 @@
 </template>
 
 <script>
+import Vue from 'vue'
     export default {
         name:'TabsWheel',
+        data(){
+            return {
+                eventBus:new Vue()
+            }
+        },
+        provide(){
+            return {
+                eventBus:this.eventBus
+            }
+        },
         props:{
             selected:{
                 type:String,
@@ -14,7 +25,6 @@
             },
             direction:{
                 type:String,
-                required:true,
                 default:'horizontal',
                 validator(value){
                     return ['horizontal','vertical'].indexOf(value)>=0
