@@ -11,11 +11,6 @@
     export default {
         name:'TabsHeadWheel',
         inject:['eventBus'],
-        data(){
-            return {
-
-            }
-        }
     }
 </script>
 
@@ -26,7 +21,6 @@
         height: $tabs-height;
         border: 1px solid pink;
         justify-content:flex-start;
-        align-items: center;
         > .actions-wrapper{
             margin-left: auto;
         }
