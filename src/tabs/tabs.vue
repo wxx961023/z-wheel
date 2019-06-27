@@ -31,8 +31,8 @@ import Vue from 'vue'
                 }
             }
         },
-        created(){
-
+        mounted(){
+            this.eventBus.$emit('update:selected',this.selected)
         }
     }
 </script>
