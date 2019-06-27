@@ -1,6 +1,7 @@
 <template>
     <div class="tabs-head">
         <slot></slot>
+        <div class="line" ref="line"></div>
         <div class="actions-wrapper">
             <slot name="actions"></slot>
         </div>
@@ -11,18 +12,33 @@
     export default {
         name:'TabsHeadWheel',
         inject:['eventBus'],
+        mounted(){
+            this.eventBus.$on('update:selected',(item,vm)=>{
+                let {width,height,left,top} = vm.$el.getBoundingClientRect()
+                this.$refs.line.style.width = `${width}px`
+                this.$refs.line.style.left = `${left}px`
+            })
+        }
     }
 </script>
 
 <style lang='scss' scoped>
     $tabs-height:40px;
+    $blue:#409EFF;
     .tabs-head{
         display: flex;
         height: $tabs-height;
-        border: 1px solid pink;
         justify-content:flex-start;
+        position: relative;
+        border-bottom: 1px solid #ddd;
         > .actions-wrapper{
             margin-left: auto;
+        }
+        >.line{
+            position: absolute;
+            bottom: 0;
+            transition: all 350ms;
+            border-bottom: 2px solid $blue;
         }
     }
 </style>
