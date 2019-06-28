@@ -18,8 +18,8 @@
     name:'ToastWheel',
     props:{
       autoClose:{
-        type:[Boolean,Number],
-        default:true,
+        type:[Number,Boolean],
+        default:1,
         validator(value){
           return value === false || typeof value === 'number'
         }

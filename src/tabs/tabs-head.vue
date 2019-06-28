@@ -32,7 +32,10 @@
         position: relative;
         border-bottom: 1px solid #ddd;
         > .actions-wrapper{
+            display: flex;
+            align-items:center;
             margin-left: auto;
+            padding: 16px;
         }
         >.line{
             position: absolute;
