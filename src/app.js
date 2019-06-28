@@ -15,8 +15,10 @@ import Plugin from './toast/plugin.js';
 import Tabs from './tabs/tabs.vue'
 import TabsHead from './tabs/tabs-head'
 import TabsBody from './tabs/tabs-body'
-import TabsItem from './tabs/tabs-item.vue'
-import TabsPane from './tabs/tabs-pane.vue'
+import TabsItem from './tabs/tabs-item'
+import TabsPane from './tabs/tabs-pane'
+import Popover from './popover/popover'
+
 
 
 
@@ -37,6 +39,7 @@ Vue.component('z-tabs-head',TabsHead);
 Vue.component('z-tabs-body',TabsBody);
 Vue.component('z-tabs-item',TabsItem);
 Vue.component('z-tabs-pane',TabsPane);
+Vue.component('z-popover',Popover);
 Vue.use(Plugin)
 
 new Vue({
