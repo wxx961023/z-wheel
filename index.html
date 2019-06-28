@@ -15,7 +15,11 @@
   }
 
   #app {
-    margin: 200px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
   }
 
   .sider {
@@ -42,6 +46,12 @@
       </template>
       <button>点我</button>
     </z-popover>
+    <z-popover>
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <button>点我</button>
+      </z-popover>
   </div>
   <script src="./src/app.js"></script>
   <script src="//at.alicdn.com/t/font_1199663_p6xr92d385.js"></script>
