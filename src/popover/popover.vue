@@ -1,9 +1,9 @@
 <template>
-    <div class="popover" @click="onClick" ref="popover">
+    <div class="popover" ref="popover">
         <div ref="contentWrapper" class="content-wrapper" v-if="visible"
             :class="{[`position-${position}`]:true}"
         >
-            <slot name="content"></slot>
+            <slot name="content" :close="close"></slot>
         </div>
         <span ref="triggerWrapper" style="display:inline-block">
             <slot></slot>
@@ -21,12 +21,35 @@ export default {
             validator(value){
                 return ['top','bottom','left','right'].indexOf(value)>=0
             }
+        },
+        trigger:{
+            type:String,
+            default:'click',
+            validator(value){
+                return ['click','hover'].indexOf(value)>=0
+            }
         }
     },
     data() {
         return {
             visible: false
         };
+    },
+    mounted() {
+        if(this.trigger === 'click'){
+            this.$refs.popover.addEventListener('click',this.onClick)
+        }else{
+            this.$refs.popover.addEventListener('mouseenter',this.open)
+            this.$refs.popover.addEventListener('mouseleave',this.close)
+        }
+    },
+    destroyed() {
+        if(this.trigger === 'click'){
+            this.$refs.popover.removeEventListener('click',this.onClick)
+        }else{
+            this.$refs.popover.removeEventListener('mouseenter',this.open)
+            this.$refs.popover.removeEventListener('mouseleave',this.close)
+        }  
     },
     methods: {
         positionContent() {
@@ -79,6 +102,7 @@ export default {
         onClick(event) {
             if (this.$refs.triggerWrapper.contains(event.target)) {
                 if (this.visible) {
+                    console.log('button')
                     this.close()
                 }else{
                     this.open()
@@ -119,6 +143,7 @@ $border-radius:4px;
         transform: translateY(-100%);
         &::before,&::after{
             left:10px;
+            border-bottom:none;
         }
         &::before{
             border-top-color:black;
@@ -133,6 +158,7 @@ $border-radius:4px;
         margin-top: 10px;
         &::before,&::after{
             left:10px;
+            border-top:none;
         }
         &::before{
             border-bottom-color:black;
@@ -150,6 +176,7 @@ $border-radius:4px;
             left:100%;
             transform: translateY(-50%);
             top:50%;
+            border-right:none;
         }
         &::before{
             border-left-color:black;
@@ -165,6 +192,7 @@ $border-radius:4px;
             right:100%;
             transform: translateY(-50%);
             top:50%;
+            border-left:none;
         }
         &::before{
             border-right-color:black;
