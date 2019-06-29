@@ -40,6 +40,8 @@
 </script>
 
 <style lang='scss' scoped>
+  $font-size:14px;
+  $button-active-bg:#eee;
   $background-color: white;
   $border-radius: 4px;
   $button-height:32px;
