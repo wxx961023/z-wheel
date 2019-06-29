@@ -36,9 +36,27 @@
 
 <body>
   <div id="app">
+    <z-popover position="bottom">
+      <template slot="content">
+        <div>popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容</div>
+      </template>
+      <z-button>点我</z-button>
+    </z-popover>
     <z-popover>
       <template slot="content">
         <div>popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容popover内容</div>
+      </template>
+      <z-button>点我</z-button>
+    </z-popover>
+    <z-popover position="left">
+      <template slot="content">
+        <div>popover内容</div>
+      </template>
+      <z-button>点我</z-button>
+    </z-popover>
+    <z-popover position="right">
+      <template slot="content">
+          <div>popover内容</div>
       </template>
       <z-button>点我</z-button>
     </z-popover>
