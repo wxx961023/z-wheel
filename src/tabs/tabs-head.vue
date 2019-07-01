@@ -16,7 +16,8 @@
             this.eventBus.$on('update:selected',(item,vm)=>{
                 let {width,height,left,top} = vm.$el.getBoundingClientRect()
                 this.$refs.line.style.width = `${width}px`
-                this.$refs.line.style.left = `${left}px`
+                this.$refs.line.style.left = scrollX + left + 'px'
+                this.$refs.line.style.top = top + height + scrollY + 'px'
             })
         }
     }
@@ -29,7 +30,6 @@
         display: flex;
         height: $tabs-height;
         justify-content:flex-start;
-        position: relative;
         border-bottom: 1px solid #ddd;
         > .actions-wrapper{
             display: flex;
@@ -37,11 +37,11 @@
             margin-left: auto;
             padding: 16px;
         }
-        >.line{
+        > .line{
             position: absolute;
-            bottom: 0;
             transition: all 350ms;
             border-bottom: 2px solid $blue;
         }
     }
+
 </style>

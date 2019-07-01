@@ -19,7 +19,7 @@
     props:{
       autoClose:{
         type:[Number,Boolean],
-        default:1,
+        default:10,
         validator(value){
           return value === false || typeof value === 'number'
         }
@@ -51,9 +51,6 @@
           [`position-${this.position}`]:true
         }
       }
-    },
-    created(){
-      
     },
     mounted(){
       this.updateStyle()
@@ -94,9 +91,10 @@
   $toast-bg:rgba(0,0,0,0.75);
   $toast-duration:.45s;
   .toast-wrapper{
-    position: fixed; left: 50%;
+    position: absolute; left: 50%;
     transform: translateX(-50%);
     &.position-top{
+      z-index: 99;
       top: 0;
       .toast{
         border-top-left-radius:0;

@@ -58,14 +58,8 @@ export default {
             const {height:height2} = contentWrapper.getBoundingClientRect()
             const { width, height, left, top } = triggerWrapper.getBoundingClientRect();
             let positions = {
-                top:{
-                    top:window.scrollY + top,
-                    left:window.scrollX + left
-                },
-                bottom:{
-                    top:window.scrollY + top + height,
-                    left:window.scrollX + left
-                },
+                top:{ top:window.scrollY + top, left:window.scrollX + left },
+                bottom:{ top:window.scrollY + top + height, left:window.scrollX + left },
                 left:{
                     top:window.scrollY + (height - height2)/2 + top,
                     left:window.scrollX + left 

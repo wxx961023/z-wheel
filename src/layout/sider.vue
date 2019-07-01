@@ -18,5 +18,11 @@
 <style lang='scss' scoped>
   .sider{
     text-align: center;
+    background: #666;
+    width: 120px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 20px;
   }
 </style>

@@ -26,8 +26,10 @@
 
 <style lang='scss' scoped>
   .layout{
+    height: 80vh;
     display: flex;
     flex-grow:1; 
+    color:white;
     flex-direction: column;
     &.hasSider{
       flex-direction:row;

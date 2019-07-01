@@ -18,6 +18,10 @@
 <style lang='scss' scoped>
   .content{
     flex-grow: 1;
-    text-align: center;
+    background: #bbb;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 20px;
   }
 </style>
